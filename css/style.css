@@ -73,9 +73,8 @@ strong {
 
 /* Buttons */
 
-.btn,
-.btn-cv,
-.btn-connect {
+.btn {
+
     display: inline-block;
     padding: .5em 2.5em;
     background: var(--clr-blue);
@@ -95,12 +94,24 @@ strong {
     transform: scale(1.1);
 }
 
-.btn-cv {
-    margin-left: 100px;
+.btn-cv,
+.btn-connect {
+    display: inline-block;
+    padding: .5em 2.5em;
+    background: var(--clr-blue);
+    color: var(--clr-dark);
+    text-decoration: none;
+    cursor: pointer;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: var(--fw-bold);
+    transition: transform 200ms ease-in-out;
 }
 
-.btn-connect {
-    margin-left: 40px;
+.buttons-container {
+    text-align: center;
+    /* To center the buttons on desktop */
 }
 
 /* Typography */
@@ -369,8 +380,33 @@ header {
     .service+.service {
         margin-left: 2em;
     }
+
 }
 
+@media (min-width: 768px) {
+
+    .btn-cv,
+    .btn-connect {
+        width: auto;
+        /* Allow the buttons to take width based on text */
+        margin: 0 10px;
+        /* Add some spacing between buttons */
+    }
+}
+
+/* Styles for mobile (screen width < 768px) */
+@media (max-width: 767px) {
+
+    .btn-cv,
+    .btn-connect {
+        display: block;
+        /* Stack buttons vertically */
+        width: 100%;
+        /* Make buttons full-width on mobile */
+        margin: 10px 0;
+        /* Add some spacing between buttons */
+    }
+}
 
 .about-me {
     max-width: 1000px;
